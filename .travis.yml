@@ -51,6 +51,11 @@ matrix:
         - GIT_FOR_WINDOWS_URL=https://github.com/git-for-windows/git/releases/download/v2.23.0.windows.5/MinGit-2.23.0.windows.5-32-bit.zip
         - GIT_FOR_WINDOWS_CHECKSUM=17e8dcffcc3c42e37e6beedcf51ef0457bef45f24290ee6e854f622a9133dd76
         - GIT_LFS_CHECKSUM=f4f49e9261584711c337f566a62bd9645cc0e10cef4dc54de1e1e0d31a7b2f71
+    - os: linux
+      language: c
+      env:
+        - TARGET_PLATFORM=arm64
+        - GIT_LFS_CHECKSUM=ea628d95158d5c76d9c7fe9432f28e49cc1a1b7ae3928b7089b1f4f97748d7a0
 compiler:
   - gcc
 script:

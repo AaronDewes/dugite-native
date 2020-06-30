@@ -31,6 +31,7 @@ matrix:
       env:
         - TARGET_PLATFORM=ubuntu
         - GIT_LFS_CHECKSUM=89f5aa2c29800bbb71f5d4550edd69c5f83e3ee9e30f770446436dd7f4ef1d4c
+      arch: amd64
     - os: osx
       language: c
       env:
@@ -56,6 +57,7 @@ matrix:
       env:
         - TARGET_PLATFORM=arm64
         - GIT_LFS_CHECKSUM=ea628d95158d5c76d9c7fe9432f28e49cc1a1b7ae3928b7089b1f4f97748d7a0
+      arch: arm64
 compiler:
   - gcc
 script:
@@ -64,6 +66,7 @@ branches:
   only:
     - master
     - /^v[0-9]*.[0-9]*.[0.9]*.*$/
+cache: ccache
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN

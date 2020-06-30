@@ -81,12 +81,14 @@ function getConfig(platform: string, arch: string) {
         os: 'linux',
         language: 'c',
         env: ['TARGET_PLATFORM=ubuntu', `GIT_LFS_CHECKSUM=${lfsFile.checksum}`],
+        arch: 'amd64',
       }
     } else if (arch === 'arm64') {
       return {
         os: 'linux',
         language: 'c',
         env: ['TARGET_PLATFORM=arm64', `GIT_LFS_CHECKSUM=${lfsFile.checksum}`],
+        arch: 'arm64',
       }
     }
   }
@@ -133,6 +135,7 @@ const baseConfig = {
   branches: {
     only: ['master', '/^v[0-9]*.[0-9]*.[0.9]*.*$/'],
   },
+  cache: 'ccache',
   deploy: {
     provider: 'releases',
     api_key: '$GITHUB_TOKEN',
